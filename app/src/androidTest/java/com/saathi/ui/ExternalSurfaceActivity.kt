@@ -67,6 +67,7 @@ class ExternalSurfaceActivity : Activity() {
         setContentView(layout)
     }
     private fun showReactiveForm() {
+        if (intent.getBooleanExtra("selection_form", false)) { showSelectionForm(); return }
         if (intent.getBooleanExtra("web_form", false)) {
             setContentView(WebView(this).apply {
                 settings.javaScriptEnabled = true
@@ -94,6 +95,35 @@ class ExternalSurfaceActivity : Activity() {
         layout.addView(Button(this).apply { isAllCaps=false; text="Hide dependent"; setOnClickListener { layout.removeView(formDependent); formDependent=null; layout.requestFocus() } })
         layout.addView(Button(this).apply { isAllCaps=false; text="Submit"; isEnabled=false })
         setContentView(layout); layout.requestFocus()
+    }
+    private fun showSelectionForm() {
+        if (intent.getBooleanExtra("web_form", false)) {
+            setContentView(WebView(this).apply {
+                settings.javaScriptEnabled = true
+                loadDataWithBaseURL(null, """<html><meta name='viewport' content='width=device-width, initial-scale=1'><body>
+                    <div id='choice'><label for='country'>Country *</label><select id='country' required>
+                    <option>fictional-selection-canary</option><option>Other fictional choice</option></select></div>
+                    <button onclick='document.getElementById("choice").remove();document.getElementById("city").style.display="block"'>Hide selection</button>
+                    <input id='city' aria-label='City *' placeholder='City *' required style='display:none'>
+                    </body></html>""", "text/html", "UTF-8", null)
+            }); return
+        }
+        val layout=LinearLayout(this).apply { orientation=LinearLayout.VERTICAL; setPadding(32,100,32,32); isFocusableInTouchMode=true }
+        val dropdown=android.widget.Spinner(this).apply {
+            id=android.view.View.generateViewId()
+            adapter=android.widget.ArrayAdapter(this@ExternalSurfaceActivity, android.R.layout.simple_spinner_item,
+                arrayOf("fictional-selection-canary", "Other fictional choice"))
+        }
+        val label=TextView(this).apply { text="Country *"; labelFor=dropdown.id }
+        layout.addView(label);layout.addView(dropdown)
+        layout.addView(Button(this).apply {
+            isAllCaps=false;text="Hide selection";setOnClickListener {
+                layout.removeView(dropdown);layout.removeView(label)
+                layout.addView(android.widget.EditText(this@ExternalSurfaceActivity).apply { hint="City *";isSingleLine=true })
+                isEnabled=false;layout.requestFocus()
+            }
+        })
+        setContentView(layout);layout.requestFocus()
     }
     private fun showChoices() {
         val layout = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; setPadding(32, 100, 32, 32) }

@@ -1,0 +1,10 @@
+Explicit interruption state
+class=android.widget.FrameLayout bounds=Rect(0, 0 - 720, 1600) clickable=false parent=null
+class=android.widget.LinearLayout bounds=Rect(0, 0 - 720, 1572) clickable=false parent=null
+class=android.widget.FrameLayout bounds=Rect(0, 64 - 720, 1572) clickable=false parent=null
+class=android.widget.LinearLayout bounds=Rect(0, 64 - 720, 1572) clickable=false parent=null
+class=android.widget.Button bounds=Rect(32, 164 - 688, 254) clickable=true parent=null
+class=android.widget.Button bounds=Rect(32, 254 - 688, 344) clickable=true parent=null
+class=android.widget.Button bounds=Rect(32, 344 - 688, 434) clickable=true parent=null
+class=android.widget.Button bounds=Rect(32, 434 - 688, 524) clickable=true parent=null
+class=android.view.View bounds=Rect(0, 1572 - 720, 1600) clickable=false parent=null

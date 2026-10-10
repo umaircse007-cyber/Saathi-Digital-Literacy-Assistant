@@ -1,7 +1,7 @@
 # Saathi end-to-end engineering handoff
 
 **Saved:** 10 October 2026  
-**Stop reason:** available Codex usage reached 11%, below the user-set 15% floor. Do not start another implementation or test phase in this run.  
+**Latest continuation:** read `HANDOFF_2026-10-10_SELECTION_FIELDS.md` first. Current stop threshold is below 10%; the previous 11%/15% stop was historical. The final Samsung rerun has an open intermittent pause-transition failure.
 **Repository:** `Saathi- Digital Literacy Co-Pilot`  
 **Working-tree rule:** preserve all current uncommitted changes. Do not reset, clean, rebase, discard, commit, push, deploy, publish or expose credentials unless the user explicitly asks.
 
@@ -126,6 +126,16 @@ The first final Samsung commerce run exposed a test-only race. Saathi's transpar
 - `docs/TEST_RESULTS.md` — current test-result ledger.
 
 No raw screenshots or XML dumps were retained because they could contain the saved delivery address. Do not recreate a cart test unless the user explicitly authorizes it again; the Zepto cart was cleared.
+
+## 4A. Current physical voice and synthetic WebView verification
+
+After the earlier handoff, the existing debug/test APKs were reinstalled on the authorized Samsung because an incompatible older Saathi signature was present. The user had previously approved replacement of Saathi and deletion of its local drafts/settings. Zepto was not changed.
+
+The physical speech-engine probe passed callback completion for English, Hindi and Hinglish. Before microphone permission, Android returned the expected insufficient-permission result. The existing voice lifecycle test then granted Saathi the microphone/notification test permissions and passed its foreground waiting/replacement/explicit-stop checks. Repeating the physical speech probe after that showed the on-device recognizer ready and returning a bounded outcome. No raw audio or transcript was saved. This is not proof of recognition accuracy, human intelligibility, barge-in quality or continuous unattended operation.
+
+On a local Pixel emulator, the current real AccessibilityService synthetic WebView test passed 40 mutation/detour/return cycles in 70,854 ms. It verified that guidance for the old Support control cleared after the fixture changed it, while task/session identity, local retargeting, external detours, explicit Stop and stale-presentation rejection remained intact. A 600-event local storm produced one measured screen analysis and no model call. A fresh emulator install exposed an Android test setup issue: the service could be enabled but still marked crashed. The test now calls the existing test-only reconnect helper before requiring a binding. This is not a production Android code change or a conclusion about the historical intermittent root cause.
+
+See `docs/test-evidence/2026-10-10-webview-current/README.md`. Keep browser/voice claims bounded: current synthetic WebView and engine callbacks are verified; arbitrary sites, real HTTPS provenance, OEM background behavior, speech usability and long-session stability are still open.
 
 ## 5. Current validation summary
 

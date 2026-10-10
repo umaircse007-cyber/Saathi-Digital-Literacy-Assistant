@@ -1,3 +1,36 @@
+## 11 October 2026 — Samsung voice lifecycle follow-up
+
+- **PASS:** Samsung `VoiceLifecycleTest` 1/1 in 8.193 seconds. The synthetic local session survived Home, returned through Saathi's launcher, ignored an obsolete Stop notification after replacement, and stopped explicitly.
+- **PASS:** Samsung `SelectionFormTest` 2/2 in 0.085 seconds. Required selection fields can be guided structurally without copying selected values; CAPTCHA and OTP-like labels retain their boundaries.
+- **PASS:** Samsung `PhysicalSpeechTest` 1/1 in 30.814 seconds in Gradle's connected Android JUnit report. English/Hindi/Hinglish TTS callbacks and a bounded on-device recognizer result completed. It saved no audio or transcript. The incomplete streamed runner output does not supersede the final JUnit XML result.
+- **TEST FIX:** The lifecycle test now requires an interactive unlocked screen, returns through the launcher after Home, and only revokes microphone/notification permissions that it granted itself. The device already held both permissions, so that restoration branch was not exercised.
+
+No production UI or voice logic changed. This does not certify voice quality, recognition accuracy, lock-screen behavior, OEM survival, TalkBack, or continuous natural conversation. Evidence: `test-evidence/2026-10-11-samsung-voice/`.
+
+## 11 October 2026 — Samsung transition-driver fixes and regression closeout
+
+Current continuation: `HANDOFF_2026-10-11_TRANSITIONS.md`. UI and production logic unchanged this phase; all prior work preserved. Found the October 10 pause-test failure's invalid input: x=1076.5 on a 720px display during animation. Test driver now waits for stable, display-contained exact control bounds. 15 rounds/45 private-message-CAPTCHA handoffs PASS. Samsung actual-service WebView: 20 cycles PASS; no model calls.
+
+Combined suite: **16/17 PASS**, retaining a commerce test-driver stale-coordinate failure across screenshot capture. Re-grounded the same expected step/product before action; final affected commerce+pause group **5/5 PASS**. All 17 distinct selected cases now have passing evidence across runs; this is not one 17/17 final combined run. Original failures remain saved. Test builds pass; prior 168 production unit/lint evidence was not rerun since production is unchanged. See `test-evidence/2026-10-11-transitions/`.
+
+No production pause/resume regression established by the missed off-screen tap. Historical WebView stale-marker cause remains separate/unresolved; its page did mutate. Broader form semantics, general researched browser workflow grounding, genuine-provider quality, voice/OEM/human acceptance, protected portal and shared cloud-state gates remain open. Deployment deferred. No new provider calls, real Zepto actions, purchases, release/signing, commit or push. Usage stop remains below10%; this entry is a phase checkpoint, not a claim the usage floor was reached.
+
+## 10 October 2026 — Selection fields, latest Samsung continuation
+
+Read `HANDOFF_2026-10-10_SELECTION_FIELDS.md` first; it supplements the full end-to-end handoff. Latest user usage floor is below **10%**, superseding older 15% entries. **Final stop: 8% five-hour remaining / 56% weekly; below the 10% floor. No further work in this run.** No resets, paid calls, commit/push, deployment or real transactions.
+
+Implemented structural native/Chromium dropdown recognition, private-safe selection content handling (including descendants), explicit label relationships, decision handoff and finite form re-observation. Samsung WebView's actual role is `comboBoxSelect` on generic View. Main UI/theme unchanged. 168 Android unit tests, debug/test builds, release Kotlin and lint pass (0 errors/60 warnings). An intermediate 12-case Samsung suite plus four synthetic commerce cases passed. **The final combined rerun reproduced an intermittent pause-fixture transition failure; do not describe final device acceptance as all passing.** Final result: **15/16 Samsung cases pass**, with the pause transition still failing; all other selected cases pass. One service record remains after restoring device settings; see cleanup notes. Evidence: `test-evidence/2026-10-10-selection-fields/final-device-after-guard.txt`. Do not repeat successful form tests without a new change; diagnose the missed transition from preserved input/window evidence. All model-call allowances remain exhausted.
+
+## 10 October 2026 — Physical voice and current WebView regression continuation
+
+- **PASS:** Samsung physical speech-engine callbacks completed for English, Hindi and Hinglish. After the authorized microphone permission/lifecycle check, the on-device recognizer became ready and returned an outcome. Audio and transcripts were not saved. This verifies engine callbacks only; it does not certify spoken intelligibility, recognition accuracy or a natural continuous conversation.
+- **PASS:** Samsung foreground voice lifecycle check. The voice service stayed in its waiting state after Home, an old notification Stop action could not end a replacement session, and explicit Stop removed the service state. No speech input/output quality was measured in that test.
+- **PASS:** Current local Pixel emulator, real AccessibilityService and synthetic WebView fixture: 40 mutation/detour/return cycles passed. The old target cleared after the fixture changed its Support control. A 600-event local storm was coalesced to one measured screen analysis with zero model calls.
+- **HARNESS FIX:** A freshly installed emulator could remain accessibility-enabled but marked crashed. The test now uses the existing test-only reconnect helper before requiring a bound service. The first run also used an Android-rejected `/sdcard` output path; the valid run used app-private test output. Production guidance behavior was not changed.
+- **NOT CERTIFIED:** historical WebView root cause, arbitrary browser/site compatibility, hours-long endurance, human speech quality, recognition accuracy, OEM background survival, or paid-cloud event-storm behavior.
+
+Evidence: `docs/test-evidence/2026-10-10-webview-current/README.md` and the Samsung summary in `docs/HANDOFF_2026-10-10_END_TO_END.md`.
+
 ## 10 October 2026 — Real Zepto product-to-cart verification
 
 - **PASS:** Full local Android unit suite: 166 tests; debug and test APK builds succeeded.
@@ -545,3 +578,18 @@ Chrome now exercises public To, 01/10/2026, ₹5221 and ₹6,398 on a localhost 
 The initial Chrome run hit first-run setup after emulator restoration, not the fixture. Setup was completed signed out, optional usage reporting switched off and notifications declined. One cold WebView run failed its initial idle assertion while the presentation revision changed during startup. The test now requires a bounded one-second settling interval before retaining the original separate one-second idle assertion; endless refresh still fails. The final paired Chrome/WebView run passed. The earlier post-tap mutation failure did not reproduce; geometry diagnostics now record tap areas, and failure diagnostics capture window/geometry state. That original intermittent cause is still not established and must not be described as a production fix. No assertion/test was skipped.
 
 A direct retry of the official cybercrime portal again timed out. Live complaint navigation, real AI incident assessment, successful microphone input and production/provider/hardware acceptance remain open. Previous 12-test reporting/UI results are retained separately and were not rerun because those screens were unchanged in this continuation.
+## 11 October 2026 — final pre-deployment checkpoint
+
+- **PASS:** Full deterministic backend suite: 170 tests, including local HTTP and hosted boundaries, `Ran 170 tests in 7.686s`, `OK`. No provider calls.
+- **PASS:** `:app:assembleDebug`, `:app:assembleRelease` and `:app:lint` completed successfully on the current tree.
+- **PASS:** Samsung `SelectionFormTest` 2/2 and `PhysicalSpeechTest` 1/1. The speech result is bounded engine evidence only; no audio/transcript was retained.
+- **INVALID HARNESS RUN:** A concurrent invocation of `VoiceLifecycleTest` overlapped with the other Samsung instrumentation processes and left many stale/dead accessibility bindings. Do not count its failure as a production defect or as a new acceptance result. The valid isolated result remains `VoiceLifecycleTest` 1/1 in 8.193 seconds. No complete device accessibility setting was cleared because that could disable unrelated user services.
+- UI, branding, navigation, colors and glass controls were unchanged. No browser, commerce, portal, private form, payment or provider call was made.
+- Handoff: `docs/HANDOFF_2026-10-11_FINAL_PREDEPLOYMENT.md`.
+## 11 October 2026 — Fresh current-continuation regression
+
+- Android `:app:testDebugUnitTest --rerun-tasks`: **168 passed, 0 failed, 0 errors, 0 skipped**.
+- Backend `python3 -m unittest discover -s backend/tests -p 'test_*.py'`: **170 passed in 8.063s**. Local loopback permission was required; no external provider or network call was made.
+- `:app:assembleDebug :app:assembleRelease :app:lint`: **BUILD SUCCESSFUL**; lint reports 0 errors and 60 warnings.
+- Samsung `VoiceLifecycleTest`: the test method is recorded **PASS 1/1** in the generated XML, while the Android instrumentation process reports a teardown crash and Gradle exits non-zero. No Saathi fatal exception was present in the filtered log. Keep this as a runner/device teardown blocker, not a clean physical-device suite pass.
+- No UI, layout, navigation, brand, color or production guidance source changed in this checkpoint. No deployment, release signing, model call, account, portal or transaction was performed.

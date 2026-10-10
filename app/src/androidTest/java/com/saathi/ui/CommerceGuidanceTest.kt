@@ -34,14 +34,20 @@ class CommerceGuidanceTest {
         val root=automation.rootInActiveWindow ?: return emptyList()
         return try { NodeMasker.flatten(root) } catch(_:IllegalStateException) { emptyList() } finally { root.recycle() }
     }
-    private fun tap(bounds:Rect) {
-        // The highlight is a separate overlay window. On the Samsung, a window transition can
-        // briefly make it the active accessibility root even though the grounded external
-        // control remains unchanged. Re-read only until that exact, already-grounded rectangle
-        // is clickable; never substitute a nearby or newly chosen control.
+    private fun tap(currentBounds:()->Rect?) {
+        // Fixture windows animate and screenshots can outlive a copied rectangle.
+        // Re-ground the same expected step/product in the current complete tree, then
+        // require stable on-screen geometry. Never choose a nearby/different product.
         val deadline=SystemClock.uptimeMillis()+4_000
+        val viewport=Rect(0,0,inst.targetContext.resources.displayMetrics.widthPixels,inst.targetContext.resources.displayMetrics.heightPixels)
+        var previous:Rect?=null
+        var stableSince=0L
         var tapped=false
         while(!tapped && SystemClock.uptimeMillis()<deadline) {
+            val bounds=currentBounds()
+            if(bounds==null || bounds.isEmpty || !viewport.contains(bounds)) { previous=null;SystemClock.sleep(100);continue }
+            if(previous!=bounds) { previous=Rect(bounds);stableSince=SystemClock.uptimeMillis();SystemClock.sleep(100);continue }
+            if(SystemClock.uptimeMillis()-stableSince<250) { SystemClock.sleep(100);continue }
             val root=automation.rootInActiveWindow
             if(root != null) {
                 fun visit(node:AccessibilityNodeInfo) {
@@ -54,6 +60,17 @@ class CommerceGuidanceTest {
             if(!tapped) SystemClock.sleep(100)
         }
         assertTrue("Grounded control is still clickable",tapped)
+    }
+    private fun commerceTarget(expected:String):Rect? {
+        val current=nodes()
+        val step=LiveGuide.plan("Order milk",current,"en-IN",false).local
+        if(!step.speechText.contains(expected)) return null
+        if(expected=="marked Add") {
+            val parent=step.target?.nodeIndex?.let { current.getOrNull(it)?.parentIndex } ?: return null
+            if(current.none { it.text=="Fixture milk" && it.parentIndex==parent }) return null
+            if(current.any { it.text=="Fixture oat drink" && it.parentIndex==parent }) return null
+        }
+        return step.target?.bounds
     }
     private fun capture(name:String) {
         SystemClock.sleep(180)
@@ -88,7 +105,7 @@ class CommerceGuidanceTest {
                 val session=SaathiSession.sessionKey(); val calls=PracticeGateway.requestsStarted.get()
                 waitFor("Grounded search") { SaathiSession.instruction.value.contains("Use Search") }
                 var screen=nodes()
-                tap(requireNotNull(LiveGuide.plan("Order milk",screen,"en-IN",false).local.target).bounds)
+                tap { commerceTarget("Use Search") }
                 waitFor("Relevant Add") { SaathiSession.instruction.value.contains("marked Add") }
                 screen=nodes(); assertFalse("No prices are private",screen.any { it.isSensitive })
                 val target=requireNotNull(LiveGuide.plan("Order milk",screen,"en-IN",false).local.target)
@@ -98,17 +115,17 @@ class CommerceGuidanceTest {
                 assertFalse(screen.any { it.text=="Fixture oat drink" && it.parentIndex==parent })
                 waitFor("Overlay") { com.saathi.overlay.HighlightOverlayService.hasTarget() }
                 capture("commerce-correct-add")
-                tap(target.bounds)
+                tap { commerceTarget("marked Add") }
                 waitFor("Cart after observed quantity") { SaathiSession.instruction.value.contains("added/quantity") }
                 screen=nodes();capture("commerce-observed-quantity")
-                tap(requireNotNull(LiveGuide.plan("Order milk",screen,"en-IN",false).local.target).bounds)
+                tap { commerceTarget("added/quantity") }
                 waitFor("Review, not purchase") { SaathiSession.instruction.value.contains("Saathi will not place") }
                 assertFalse(com.saathi.overlay.HighlightOverlayService.hasTarget());capture("commerce-review")
-                screen=nodes();tap(screen.single { it.text=="Fixture private step" }.bounds)
+                screen=nodes();tap { nodes().singleOrNull { it.text=="Fixture private step" }?.bounds }
                 waitFor("Private handoff") { SaathiSession.status.value==GuidanceSessionState.SENSITIVE_HANDOVER }
                 screen=nodes();assertTrue(screen.any { it.structuralPrivateField });assertTrue(screen.any { it.text=="Order total ₹47" && !it.isSensitive })
                 assertFalse(screen.any { it.text=="321" });capture("commerce-private-field-only")
-                tap(screen.single { it.text=="Fixture return" }.bounds)
+                tap { nodes().singleOrNull { it.text=="Fixture return" }?.bounds }
                 waitFor("Same task returns to review") { SaathiSession.instruction.value.contains("Saathi will not place") }
                 assertEquals(session,SaathiSession.sessionKey());assertEquals(calls,PracticeGateway.requestsStarted.get())
             }

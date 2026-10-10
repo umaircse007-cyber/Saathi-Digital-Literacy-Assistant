@@ -1,0 +1,44 @@
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.SelectionFormTest:
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Selection values must stay local: android.widget.Spinner expected null, but was:<fictional-selection-canary>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at com.saathi.ui.SelectionFormTest.requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(SelectionFormTest.kt:23)
+
+INSTRUMENTATION_STATUS: stream=
+Error in requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(com.saathi.ui.SelectionFormTest):
+java.lang.AssertionError: Selection values must stay local: android.widget.Spinner expected null, but was:<fictional-selection-canary>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at com.saathi.ui.SelectionFormTest.requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(SelectionFormTest.kt:23)
+
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 0.057
+There was 1 failure:
+1) requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(com.saathi.ui.SelectionFormTest)
+java.lang.AssertionError: Selection values must stay local: android.widget.Spinner expected null, but was:<fictional-selection-canary>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotNull(Assert.java:756)
+	at org.junit.Assert.assertNull(Assert.java:738)
+	at com.saathi.ui.SelectionFormTest.requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(SelectionFormTest.kt:23)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

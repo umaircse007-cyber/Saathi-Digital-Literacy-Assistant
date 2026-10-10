@@ -44,7 +44,7 @@ internal object FormGuide {
         ))
 
         val fields = nodes.withIndex().filter { (_, node) ->
-            node.isEnabled && node.isEditable && !node.isSensitive && !node.isPassword &&
+            node.isEnabled && (node.isEditable || node.formControl != FormControlKind.NONE) && !node.isSensitive && !node.isPassword &&
                 node.bounds.width() > 0 && node.bounds.height() > 0 &&
                 !browserAddress.containsMatchIn(listOfNotNull(node.resourceId, node.hint, node.description, node.className).joinToString(" "))
         }
@@ -58,6 +58,7 @@ internal object FormGuide {
         val ordered = fields.sortedWith(compareBy<IndexedValue<UiNode>> { it.value.bounds.top }.thenBy { it.value.bounds.left })
         val assessment = ReactiveForm.assess(ordered.map { (index, node) ->
             FormField(index.toString(), node.hint, when {
+                node.formControl != FormControlKind.NONE -> FormPresence.UNKNOWN
                 !node.valueKnown -> FormPresence.UNKNOWN
                 node.hasValue -> FormPresence.PRESENT
                 else -> FormPresence.EMPTY
@@ -65,7 +66,7 @@ internal object FormGuide {
         })
         val next = assessment.next?.id?.toIntOrNull()?.let { index -> fields.firstOrNull { it.index == index } }
         if (next == null) return noTarget(if (fields.isEmpty()) copy(
-            "I cannot identify a safe visible text field here. Guidance will recheck when the screen changes.",
+            "I cannot identify a safe enabled form field here. Guidance will recheck when the screen changes.",
             "यहाँ सुरक्षित फ़ील्ड नहीं दिख रहा। स्क्रीन बदलने पर फिर जाँच होगी।",
             "Yahan safe field nahi dikh raha. Screen badalne par phir check hoga."
         ) else copy(
@@ -75,8 +76,20 @@ internal object FormGuide {
         ))
 
         val node = next.value
+        if (node.formControl == FormControlKind.DECISION ||
+            (node.formControl == FormControlKind.DROPDOWN && node.hint?.let { !LiveAiPolicy.allowed(it, 300) } == true)) {
+            return noTarget(copy(
+                "This form includes a selection or consent decision. Read its label and choose yourself. Saathi does not choose, accept terms, or verify the selected value.",
+                "इस फ़ॉर्म में चयन या सहमति का निर्णय है। उसका विवरण पढ़कर स्वयं चुनें। साथी विकल्प नहीं चुनता, शर्तें स्वीकार नहीं करता और चयन की पुष्टि नहीं करता।",
+                "Is form mein selection ya consent ka faisla hai. Label padhkar khud chunein. Saathi option nahi chunta, terms accept nahi karta aur selection verify nahi karta."
+            ))
+        }
         val fieldName = fieldName(next.index, node, fields, nodes)
-        val instruction = if (fieldName == null) copy(
+        val instruction = if (node.formControl == FormControlKind.DROPDOWN) copy(
+            "Review the highlighted dropdown and choose the appropriate option yourself. Its selected value is not read or verified; a visible selection does not prove the form is complete.",
+            "चिह्नित ड्रॉपडाउन देखें और सही विकल्प स्वयं चुनें। चयनित मान पढ़ा या सत्यापित नहीं होता; दिखता चयन फ़ॉर्म पूरा होने का प्रमाण नहीं है।",
+            "Marked dropdown dekhein aur sahi option khud chunein. Selected value padhi ya verify nahi hoti; selection dikhna form complete hone ka proof nahi hai."
+        ) else if (fieldName == null) copy(
             "Fill the highlighted field. Enter and review the value yourself; Saathi does not read, type, or submit it.",
             "Nishaan wale field mein jaankari khud bharein aur jaanchein; Saathi ise nahi padhta, likhta ya submit karta.",
             "Marker wale field mein jaankari khud bharein aur jaanchein; Saathi ise nahi padhta, likhta ya submit karta."

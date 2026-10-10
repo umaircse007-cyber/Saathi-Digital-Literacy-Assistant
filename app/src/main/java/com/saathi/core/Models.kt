@@ -25,7 +25,8 @@ data class UiNode(
     val inputType: Int = 0,
     // Snapshot-local hierarchy; never a saved ID or a screen coordinate heuristic.
     val parentIndex: Int? = null,
-    val privacyKind: com.saathi.accessibility.PrivacyKind = com.saathi.accessibility.PrivacyKind.UNKNOWN_SENSITIVE
+    val privacyKind: com.saathi.accessibility.PrivacyKind = com.saathi.accessibility.PrivacyKind.UNKNOWN_SENSITIVE,
+    val formControl: FormControlKind = FormControlKind.NONE
 ) {
     fun fingerprintPart() = listOf(resourceId, text, description, className, isEnabled, bounds.toShortString()).joinToString("|")
 }

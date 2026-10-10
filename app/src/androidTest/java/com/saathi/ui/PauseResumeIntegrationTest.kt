@@ -55,14 +55,30 @@ class PauseResumeIntegrationTest {
         } finally { @Suppress("DEPRECATION") root.recycle() }
     }.orEmpty()
     private fun tap(label: String) {
+        val screen = android.graphics.Rect(0, 0, context.resources.displayMetrics.widthPixels, context.resources.displayMetrics.heightPixels)
+        var stableBounds: android.graphics.Rect? = null
+        var stableSince = 0L
+        fun settled(bounds: android.graphics.Rect): Boolean {
+            if (bounds.isEmpty || !screen.contains(bounds)) {
+                File(output(), "rejected-tap-geometry.txt").appendText("$label: outside $screen: $bounds\n")
+                stableBounds=null;return false
+            }
+            if (stableBounds != bounds) { stableBounds=android.graphics.Rect(bounds);stableSince=SystemClock.uptimeMillis();return false }
+            return SystemClock.uptimeMillis()-stableSince >= 250
+        }
         // Test driver only: the production snapshot intentionally removes all message-screen
         // content. Locate this fixed fixture navigation button without reading the message.
         if (label == "Return to choices" && nodes().any { it.privateContext }) {
-            val root = requireNotNull(automation.rootInActiveWindow)
-            val matches = root.findAccessibilityNodeInfosByText(label)
             val bounds = android.graphics.Rect()
-            try { matches.single { it.isClickable }.getBoundsInScreen(bounds) }
-            finally { matches.forEach { it.recycle() }; root.recycle() }
+            waitFor("Stable fixture return control") {
+                val root = automation.rootInActiveWindow ?: return@waitFor false
+                val matches = root.findAccessibilityNodeInfosByText(label)
+                try {
+                    val match=matches.singleOrNull { it.isClickable && it.isVisibleToUser && it.isEnabled }
+                    match?.getBoundsInScreen(bounds)
+                    match!=null && settled(bounds)
+                } finally { matches.forEach { it.recycle() };root.recycle() }
+            }
             val down = SystemClock.uptimeMillis()
             for (action in listOf(MotionEvent.ACTION_DOWN, MotionEvent.ACTION_UP)) {
                 val event = MotionEvent.obtain(down, SystemClock.uptimeMillis(), action, bounds.exactCenterX(), bounds.exactCenterY(), 0)
@@ -73,7 +89,7 @@ class PauseResumeIntegrationTest {
         var observed: com.saathi.core.UiNode? = null
         waitFor("Visible $label") {
             observed = nodes().firstOrNull { it.text == label && (it.isClickable || it.clickableAncestorBounds != null) }
-            observed != null
+            observed?.let { settled(if(it.isClickable) it.bounds else requireNotNull(it.clickableAncestorBounds)) } == true
         }
         // Keep the complete snapshot that satisfied the wait; a second tree can be mid-transition.
         val node = requireNotNull(observed)

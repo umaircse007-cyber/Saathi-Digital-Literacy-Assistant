@@ -1,0 +1,277 @@
+INSTRUMENTATION_STATUS: class=com.saathi.ui.LiveAccessibilityIntegrationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.LiveAccessibilityIntegrationTest:
+INSTRUMENTATION_STATUS: test=realServiceTracksExternalDetourReturnAndWebChangeThenStops
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.LiveAccessibilityIntegrationTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=realServiceTracksExternalDetourReturnAndWebChangeThenStops
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PauseResumeIntegrationTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.PauseResumeIntegrationTest:
+INSTRUMENTATION_STATUS: test=manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PauseResumeIntegrationTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.ReactiveFormIntegrationTest:
+INSTRUMENTATION_STATUS: test=nativeFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=nativeFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=webSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=webSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=webFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=webFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=nativeSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=nativeSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.SelectionFormTest:
+INSTRUMENTATION_STATUS: test=checkboxLabelsStillExposeChallengeAndPrivacyBoundaries
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=checkboxLabelsStillExposeChallengeAndPrivacyBoundaries
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.NodeMaskerPrivacyTest:
+INSTRUMENTATION_STATUS: test=mixedFormKeepsSafeFieldIndicesWithoutSelectingSecrets
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=mixedFormKeepsSafeFieldIndicesWithoutSelectingSecrets
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=privateOccupancyMustNotBeDerivedFromValue
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=privateOccupancyMustNotBeDerivedFromValue
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=structureOnlyMarkerIsUniqueAndNeverConfirmsCompletion
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=structureOnlyMarkerIsUniqueAndNeverConfirmsCompletion
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PermissionLossIntegrationTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.PermissionLossIntegrationTest:
+INSTRUMENTATION_STATUS: test=overlayAndAccessibilityRevocationStopAndNeverAutoResume
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PermissionLossIntegrationTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=overlayAndAccessibilityRevocationStopAndNeverAutoResume
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.CommerceGuidanceTest:
+INSTRUMENTATION_STATUS: test=realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Grounded control is still clickable
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.CommerceGuidanceTest.tap(CommerceGuidanceTest.kt:56)
+	at com.saathi.ui.CommerceGuidanceTest.exercise(CommerceGuidanceTest.kt:101)
+	at com.saathi.ui.CommerceGuidanceTest.realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend(CommerceGuidanceTest.kt:65)
+
+INSTRUMENTATION_STATUS: stream=
+Error in realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend(com.saathi.ui.CommerceGuidanceTest):
+java.lang.AssertionError: Grounded control is still clickable
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.CommerceGuidanceTest.tap(CommerceGuidanceTest.kt:56)
+	at com.saathi.ui.CommerceGuidanceTest.exercise(CommerceGuidanceTest.kt:101)
+	at com.saathi.ui.CommerceGuidanceTest.realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend(CommerceGuidanceTest.kt:65)
+
+INSTRUMENTATION_STATUS: test=realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=repeatedControlsRequireTheMatchingCardAndAmbiguousProductsStayUserChoices
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=repeatedControlsRequireTheMatchingCardAndAmbiguousProductsStayUserChoices
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=startingOnAlreadyOpenQuietCommerceScreenObservesWithoutNewAppEvent
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=startingOnAlreadyOpenQuietCommerceScreenObservesWithoutNewAppEvent
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=promotionNeedsAnObservedDialogAndSafeNamedDismissal
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=17
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=17
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=promotionNeedsAnObservedDialogAndSafeNamedDismissal
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 123.665
+There was 1 failure:
+1) realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend(com.saathi.ui.CommerceGuidanceTest)
+java.lang.AssertionError: Grounded control is still clickable
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.CommerceGuidanceTest.tap(CommerceGuidanceTest.kt:56)
+	at com.saathi.ui.CommerceGuidanceTest.exercise(CommerceGuidanceTest.kt:101)
+	at com.saathi.ui.CommerceGuidanceTest.realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend(CommerceGuidanceTest.kt:65)
+
+FAILURES!!!
+Tests run: 17,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

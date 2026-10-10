@@ -46,7 +46,7 @@ object SaathiSession {
     private var sourcePlan: com.saathi.core.ReviewedPlanNavigation? = null
     fun reviewedPlan(): com.saathi.core.EvidencePlan? = (sourcePlan ?: pausedTask?.sourcePlan)?.plan
     fun canRecheckForm() = active && live && sourcePlan == null && FormGuide.isRequest(goal) &&
-        latestNodes.any { it.isEditable } && com.saathi.core.ScreenInterruption.reason(latestNodes) == null &&
+        latestNodes.any { it.isEditable || it.formControl != com.saathi.core.FormControlKind.NONE } && com.saathi.core.ScreenInterruption.reason(latestNodes) == null &&
         !com.saathi.core.BrowserSafetyPolicy.present(latestNodes)
     fun wantsBrowserLocation() = active && sourcePlan != null
     fun discardReviewedPlan(plan: com.saathi.core.EvidencePlan?) {

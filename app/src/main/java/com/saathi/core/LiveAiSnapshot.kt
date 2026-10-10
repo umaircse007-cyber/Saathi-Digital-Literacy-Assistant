@@ -31,7 +31,7 @@ object LiveAiPolicy {
             !com.saathi.orchestrator.LiveGuide.allowedPackage(ticket.packageName, "com.saathi")) return null
         val controls = nodes.mapIndexedNotNull { index, node ->
             // Text-entry values, including browser address bars, never become cloud controls.
-            if (!node.isEnabled || node.isEditable || node.className.orEmpty().contains("EditText") ||
+            if (!node.isEnabled || node.isEditable || node.formControl != FormControlKind.NONE || node.className.orEmpty().contains("EditText") ||
                 (!node.isClickable && node.clickableAncestorBounds == null)) return@mapIndexedNotNull null
             val label = node.text?.takeIf { it.isNotBlank() } ?: node.description ?: return@mapIndexedNotNull null
             if (!allowed(label, 80)) return@mapIndexedNotNull null

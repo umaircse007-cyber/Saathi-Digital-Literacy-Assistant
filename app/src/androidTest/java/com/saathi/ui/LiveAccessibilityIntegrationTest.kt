@@ -55,10 +55,18 @@ class LiveAccessibilityIntegrationTest {
         } finally { @Suppress("DEPRECATION") root.recycle() }
     }.orEmpty()
     private fun tap(label: String) {
+        val screen=android.graphics.Rect(0,0,context.resources.displayMetrics.widthPixels,context.resources.displayMetrics.heightPixels)
+        var stableBounds:android.graphics.Rect?=null
+        var stableSince=0L
         var observed: com.saathi.core.UiNode? = null
         waitFor("Visible $label") {
             observed = nodes().firstOrNull { it.text == label && (it.isClickable || it.clickableAncestorBounds != null) }
-            observed != null
+            val bounds=observed?.let { if(it.isClickable) it.bounds else it.clickableAncestorBounds }
+            if(bounds==null || bounds.isEmpty || !screen.contains(bounds)) {
+                stableBounds=null;false
+            } else if(stableBounds!=bounds) {
+                stableBounds=android.graphics.Rect(bounds);stableSince=SystemClock.uptimeMillis();false
+            } else SystemClock.uptimeMillis()-stableSince>=250
         }
         // Keep the complete snapshot that satisfied the wait; a second tree can be mid-transition.
         val node = requireNotNull(observed)
@@ -76,7 +84,7 @@ class LiveAccessibilityIntegrationTest {
     } }
 
     @Test fun realServiceTracksExternalDetourReturnAndWebChangeThenStops() {
-        assertTrue("Run only on a synthetic Android emulator", android.os.Build.FINGERPRINT.contains("generic") || android.os.Build.MODEL.startsWith("sdk_"))
+        assertTrue("Physical testing requires explicit opt-in", android.os.Build.FINGERPRINT.contains("generic") || android.os.Build.MODEL.startsWith("sdk_") || InstrumentationRegistry.getArguments().getString("physicalDeviceConfirmed")=="true")
         val service = "com.saathi/com.saathi.accessibility.SaathiAccessibilityService"
         val priorServices = shell("settings get secure enabled_accessibility_services")
         val priorEnabled = shell("settings get secure accessibility_enabled")
@@ -100,6 +108,10 @@ class LiveAccessibilityIntegrationTest {
             val enabled = (priorServices.takeUnless { it == "null" }.orEmpty().split(':').filter { it.isNotBlank() } + service).distinct().joinToString(":")
             shell("settings put secure enabled_accessibility_services $enabled")
             shell("settings put secure accessibility_enabled 1")
+            // A fresh instrumentation install can leave Android with this service enabled
+            // but marked crashed until the setting is toggled. Rebind before asserting the
+            // actual service behavior; production service code is not altered by this helper.
+            DeviceTestAccess.reconnect(automation)
             waitFor("Real Saathi accessibility service bound") {
                 shell("dumpsys accessibility").substringAfter("Bound services:").substringBefore("Enabled services:").contains("label=Saathi guidance")
             }

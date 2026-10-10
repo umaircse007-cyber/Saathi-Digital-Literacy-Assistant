@@ -84,12 +84,12 @@ class ReactiveFormIntegrationTest {
             assertTrue("Observed stable presentation samples",stableSamples>=3)
         } finally { com.saathi.accessibility.ObservationDiagnostics.observer=null }
     }
-    private fun exercise(web:Boolean) {
+    private fun exercise(web:Boolean, selection:Boolean=false) {
         assertTrue(android.os.Build.MODEL.startsWith("sdk_") || android.os.Build.FINGERPRINT.contains("generic") || InstrumentationRegistry.getArguments().getString("physicalDeviceConfirmed") == "true")
         val oldServices=shell("settings get secure enabled_accessibility_services");val oldEnabled=shell("settings get secure accessibility_enabled")
         val oldOverlay=Regex("SYSTEM_ALERT_WINDOW: (allow|ignore|deny|default)").find(shell("appops get com.saathi SYSTEM_ALERT_WINDOW"))?.groupValues?.get(1) ?: "default"
         val external=Intent().setComponent(ComponentName(inst.context.packageName,ExternalSurfaceActivity::class.java.name))
-            .putExtra("reactive_form",true).putExtra("web_form",web).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            .putExtra("reactive_form",true).putExtra("web_form",web).putExtra("selection_form",selection).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         try {
             shell("appops set com.saathi SYSTEM_ALERT_WINDOW allow")
             shell("settings put secure enabled_accessibility_services com.saathi/com.saathi.accessibility.SaathiAccessibilityService")
@@ -99,6 +99,36 @@ class ReactiveFormIntegrationTest {
             ActivityScenario.launch(MainActivity::class.java).use { scenario ->
                 scenario.onActivity { assertTrue(SaathiSession.startLive(it,"Help fill form",GuidanceLanguage.ENGLISH,false));it.startActivity(external) }
                 val session=SaathiSession.sessionKey();val calls=PracticeGateway.requestsStarted.get()
+                if(selection) {
+                    // Synthetic fixture metadata only: some WebViews expose a semantic
+                    // role on a generic View instead of the native Spinner class.
+                    waitFor("Synthetic selection page loaded") {
+                        val r=automation.rootInActiveWindow ?: return@waitFor false
+                        try { NodeMasker.flatten(r).any { it.text == "Hide selection" } }
+                        catch(e:IllegalStateException) { if(e.message != "Missing observation branch") throw e; false }
+                        finally { r.recycle() }
+                    }
+                    val roleRoot=automation.rootInActiveWindow
+                    if(roleRoot?.packageName?.toString()==inst.context.packageName) {
+                        val roleLines=mutableListOf<String>()
+                        fun roles(n:AccessibilityNodeInfo) {
+                            roleLines.add("class=${n.className}; keys=${n.extras.keySet()}; roles=" + n.extras.keySet().filter { it.contains("role",true) }.joinToString { "$it=${n.extras.get(it)}" })
+                            for(i in 0 until n.childCount) n.getChild(i)?.let { child -> try { roles(child) } finally { child.recycle() } }
+                        }
+                        try { roles(roleRoot) } finally { roleRoot.recycle() }
+                        java.io.File(inst.targetContext.filesDir,"selection-roles-${if(web) "web" else "native"}.txt").writeText(roleLines.joinToString("\n"))
+                    } else roleRoot?.recycle()
+                    waitFor("Dropdown is guided without certifying its selection") { SaathiSession.instruction.value.contains("highlighted dropdown") }
+                    capture(if(web) "selection-web" else "selection-native")
+                    val root=requireNotNull(automation.rootInActiveWindow)
+                    val nodes=try { NodeMasker.flatten(root) } finally { root.recycle() }
+                    assertTrue("Platform dropdown role observed", nodes.any { it.formControl == com.saathi.core.FormControlKind.DROPDOWN })
+                    assertFalse("Selected values/descendants are withheld",nodes.any { it.text?.contains("fictional-selection-canary")==true || it.description?.contains("fictional-selection-canary")==true })
+                    action("Hide selection")
+                    waitFor("Removed dropdown re-evaluates next field without zoom") { SaathiSession.instruction.value.contains("city field") }
+                    assertEquals(calls,PracticeGateway.requestsStarted.get());assertEquals(session,SaathiSession.sessionKey())
+                    return@use
+                }
                 waitFor("First required field") { SaathiSession.instruction.value.contains("city field") }
                 capture(if(web) "form-web-start" else "form-native-start")
                 verifyUnchangedFallbackKeepsPresentation()
@@ -152,4 +182,6 @@ class ReactiveFormIntegrationTest {
     }
     @Test fun nativeFieldsReactWithoutZoomRefreshOrValueAccess()=exercise(false)
     @Test fun webFieldsReactWithoutZoomRefreshOrValueAccess()=exercise(true)
+    @Test fun nativeSelectionValuesRemainLocalAndRemovalRebuildsGuidance()=exercise(false,true)
+    @Test fun webSelectionValuesRemainLocalAndRemovalRebuildsGuidance()=exercise(true,true)
 }

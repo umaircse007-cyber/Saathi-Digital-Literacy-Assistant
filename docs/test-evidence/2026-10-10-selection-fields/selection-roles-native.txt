@@ -1,0 +1,10 @@
+class=android.widget.FrameLayout; keys=[]; roles=
+class=android.widget.LinearLayout; keys=[]; roles=
+class=android.widget.FrameLayout; keys=[]; roles=
+class=android.widget.LinearLayout; keys=[]; roles=
+class=android.widget.TextView; keys=[]; roles=
+class=android.widget.Spinner; keys=[]; roles=
+class=android.widget.TextView; keys=[]; roles=
+class=android.widget.Button; keys=[]; roles=
+class=android.view.View; keys=[]; roles=
+class=android.view.View; keys=[]; roles=

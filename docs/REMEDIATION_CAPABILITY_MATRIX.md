@@ -1,3 +1,25 @@
+## 11 October 2026 — Samsung voice follow-up
+
+**PASS within a bounded physical-device scope:** `VoiceLifecycleTest` passed 1/1 in 8.193 seconds, and `SelectionFormTest` passed 2/2 in 0.085 seconds on Samsung SM-M076B/API 36. The lifecycle test now uses Saathi's real launcher after Home and requires an interactive, unlocked device; it does not mistake a locked display for a voice-service fault. It also restores only test-granted microphone/notification permissions.
+
+**Bounded physical-engine PASS:** Samsung `PhysicalSpeechTest` passed 1/1 in 30.814 seconds in Gradle's generated connected Android JUnit report. English/Hindi/Hinglish TTS callbacks and a bounded on-device recognizer callback completed; no audio or transcript was retained. This does not certify human voice quality or natural conversation.
+
+**Still open:** human voice quality, recognition accuracy, lock-screen behavior, TalkBack usability, OEM survival, long-session performance, arbitrary-browser provenance and authenticated portal acceptance. UI and production source were unchanged. Evidence: `test-evidence/2026-10-11-samsung-voice/`.
+
+## 11 October 2026 — Samsung transition-driver fixes and regression closeout
+
+Current continuation: `HANDOFF_2026-10-11_TRANSITIONS.md`. UI and production logic unchanged this phase; all prior work preserved. Found the October 10 pause-test failure's invalid input: x=1076.5 on a 720px display during animation. Test driver now waits for stable, display-contained exact control bounds. 15 rounds/45 private-message-CAPTCHA handoffs PASS. Samsung actual-service WebView: 20 cycles PASS; no model calls.
+
+Combined suite: **16/17 PASS**, retaining a commerce test-driver stale-coordinate failure across screenshot capture. Re-grounded the same expected step/product before action; final affected commerce+pause group **5/5 PASS**. All 17 distinct selected cases now have passing evidence across runs; this is not one 17/17 final combined run. Original failures remain saved. Test builds pass; prior 168 production unit/lint evidence was not rerun since production is unchanged. See `test-evidence/2026-10-11-transitions/`.
+
+No production pause/resume regression established by the missed off-screen tap. Historical WebView stale-marker cause remains separate/unresolved; its page did mutate. Broader form semantics, general researched browser workflow grounding, genuine-provider quality, voice/OEM/human acceptance, protected portal and shared cloud-state gates remain open. Deployment deferred. No new provider calls, real Zepto actions, purchases, release/signing, commit or push. Usage stop remains below10%; this entry is a phase checkpoint, not a claim the usage floor was reached.
+
+## 10 October 2026 — Selection fields, latest Samsung continuation
+
+Read `HANDOFF_2026-10-10_SELECTION_FIELDS.md` first; it supplements the full end-to-end handoff. Latest user usage floor is below **10%**, superseding older 15% entries. **Final stop: 8% five-hour remaining / 56% weekly; below the 10% floor. No further work in this run.** No resets, paid calls, commit/push, deployment or real transactions.
+
+Implemented structural native/Chromium dropdown recognition, private-safe selection content handling (including descendants), explicit label relationships, decision handoff and finite form re-observation. Samsung WebView's actual role is `comboBoxSelect` on generic View. Main UI/theme unchanged. 168 Android unit tests, debug/test builds, release Kotlin and lint pass (0 errors/60 warnings). An intermediate 12-case Samsung suite plus four synthetic commerce cases passed. **The final combined rerun reproduced an intermittent pause-fixture transition failure; do not describe final device acceptance as all passing.** Final result: **15/16 Samsung cases pass**, with the pause transition still failing; all other selected cases pass. One service record remains after restoring device settings; see cleanup notes. Evidence: `test-evidence/2026-10-10-selection-fields/final-device-after-guard.txt`. Do not repeat successful form tests without a new change; diagnose the missed transition from preserved input/window evidence. All model-call allowances remain exhausted.
+
 ## 10 October 2026 — Samsung physical-device verification and real Zepto fixes
 
 Usage stop: latest check4% short-window remaining/39% weekly. Stop new work now; threshold was crossed between checks. No reset/model calls/commit/push/deployment. Samsung SM-M076B Android16/API36 connected via wireless ADB (rediscover transport; do not reuse70 blindly). User approved uninstalling the incompatible-signature Saathi and replacing it; saved settings/drafts were deleted as explicitly authorized. Current debug build is installed; no release or deployment.
@@ -218,3 +240,13 @@ Evidence directory: `test-evidence/2026-10-07-research/`. No live provider calls
 ## External/manual work
 
 Choose and review source/search hosting and source-authority records; configure the actual HTTPS backend/accounts; review current official policies and protected workflows; separately authorize genuine-model evaluation after architecture gates; validate physical speech/OEM/TalkBack/performance. No real private data, transaction, CAPTCHA solving or complaint submission should be used as automated tests.
+## 11 October 2026 — final pre-deployment checkpoint
+
+**PASS:** 170 offline backend tests; debug/release APK builds; lint. **PASS:** Samsung selection 2/2 and bounded physical speech 1/1. **INVALID HARNESS RUN:** one lifecycle invocation overlapped with other instrumentation processes and produced stale accessibility bindings; the accepted isolated lifecycle result remains 1/1. No unrelated device accessibility settings were cleared. UI unchanged. Deployment and external provider/portal/browser/OEM acceptance remain open. See `HANDOFF_2026-10-11_FINAL_PREDEPLOYMENT.md`.
+## 11 October 2026 — Current continuation evidence
+
+**PASS:** Fresh Android unit suite 168/168; fresh offline backend suite 170/170. Backend loopback tests were run with explicit local permission and made no provider or internet request. UI/source preservation remains intact.
+
+**PHYSICAL DEVICE / HARNESS BLOCKER:** On Samsung SM-M076B, the serialized `VoiceLifecycleTest` method passed 1/1 in JUnit, but Gradle reported `INSTRUMENTATION_FAILED: Process crashed` during teardown. Filtered logs contain no Saathi fatal exception. Do not treat this as a clean physical-device acceptance result; rerun only with a single process and package-scoped cleanup if a new device phase is justified.
+
+**OPEN:** Historical WebView causality, arbitrary browser provenance and plan binding, structural-only form semantics, genuine provider quality/latency, human voice/OEM/TalkBack/long-session acceptance, protected cybercrime workflows, shared hosted persistence and deployment configuration.

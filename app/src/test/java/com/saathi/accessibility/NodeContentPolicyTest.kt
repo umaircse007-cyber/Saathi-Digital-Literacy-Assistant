@@ -4,6 +4,15 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class NodeContentPolicyTest {
+    @Test fun selectionContainersAndDescendantsNeverReadValues() {
+        val result = NodeContentPolicy.read(false, false, "Country *", null, 0, false,
+            { error("Selection text getter accessed") }, { error("Selection description getter accessed") }, selection=true)
+        assertNull(result.text); assertNull(result.description)
+        assertFalse(result.valueKnown); assertFalse(result.hasValue)
+        val secret = NodeContentPolicy.read(false, false, "Security answer", null, 0, false,
+            { error("Secret selection accessed") }, { error("Secret selection accessed") }, selection=true)
+        assertTrue(secret.sensitive)
+    }
     @Test fun publicProductWeightRangesAreNotSecretNumbers() {
         for(label in listOf("450 - 500 g", "200 - 300 g", "500-1000 ml", "Product, 450 - 500 g, ₹47")) {
             val result=NodeContentPolicy.read(false,false,null,null,0,false,{label},{null})

@@ -1,0 +1,25 @@
+{
+  "cycles": 20,
+  "samples": [
+    {
+      "cycle": 1,
+      "elapsed_ms": 2475,
+      "pss_kb": 160995,
+      "heap_used_bytes": 8025056
+    },
+    {
+      "cycle": 11,
+      "elapsed_ms": 23818,
+      "pss_kb": 160541,
+      "heap_used_bytes": 10138592
+    },
+    {
+      "cycle": 20,
+      "elapsed_ms": 42950,
+      "pss_kb": 160798,
+      "heap_used_bytes": 9712608
+    }
+  ],
+  "same_guidance_session": true,
+  "scope": "synthetic WebView mutation\/detour\/return; not proof of historical failure cause or OEM endurance"
+}

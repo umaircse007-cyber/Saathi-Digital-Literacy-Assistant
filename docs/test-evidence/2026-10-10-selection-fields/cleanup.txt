@@ -1,0 +1,2 @@
+Instrumentation finished. Active ServiceRecord count for Saathi: 1
+No server/reverse mapping/emulator started by this run. Test finally blocks stop guidance and restore accessibility/overlay settings.

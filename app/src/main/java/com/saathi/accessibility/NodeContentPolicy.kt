@@ -6,12 +6,17 @@ internal object NodeContentPolicy {
         val structuralPrivateField: Boolean, val hasValue: Boolean, val valueKnown: Boolean)
 
     fun read(password: Boolean, editable: Boolean, hint: String?, id: String?, inputType: Int,
-             showingHint: Boolean, text: () -> String?, description: () -> String?, selectionEnd: Int = -1): Content {
+             showingHint: Boolean, text: () -> String?, description: () -> String?, selectionEnd: Int = -1,
+             selection: Boolean = false): Content {
         // Android input-type constants, kept platform-independent for accessor regression tests.
         val variation = inputType and 0xfff
         val secretType = variation in setOf(0x81, 0x91, 0xe1, 0x12)
         val privateMetadata = SensitiveContent.isSensitive(password || secretType, hint) || SensitiveContent.hasPrivateMetadata(id)
         if (privateMetadata) return Content(null, null, true, editable || password || secretType, false, false)
+        // A dropdown's displayed text (and its descendants) may be a selected personal
+        // value. This applies to value-bearing containers, not static checkbox labels
+        // needed to detect CAPTCHA/consent. Those labels retain the static privacy filter.
+        if (selection) return Content(null, null, false, false, false, false)
         // An unlabelled editable field may also contain a secret. Never inspect its value or
         // content description to decide whether it is filled. Showing a hint is a structural
         // empty-field signal. A positive cursor offset proves only presence; offset zero

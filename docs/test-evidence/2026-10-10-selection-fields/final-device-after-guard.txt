@@ -1,0 +1,259 @@
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.SelectionFormTest:
+INSTRUMENTATION_STATUS: test=checkboxLabelsStillExposeChallengeAndPrivacyBoundaries
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=checkboxLabelsStillExposeChallengeAndPrivacyBoundaries
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.ReactiveFormIntegrationTest:
+INSTRUMENTATION_STATUS: test=nativeFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=nativeFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=webSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=webSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=webFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=webFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=nativeSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=nativeSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.NodeMaskerPrivacyTest:
+INSTRUMENTATION_STATUS: test=mixedFormKeepsSafeFieldIndicesWithoutSelectingSecrets
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=mixedFormKeepsSafeFieldIndicesWithoutSelectingSecrets
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=privateOccupancyMustNotBeDerivedFromValue
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=privateOccupancyMustNotBeDerivedFromValue
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=structureOnlyMarkerIsUniqueAndNeverConfirmsCompletion
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=structureOnlyMarkerIsUniqueAndNeverConfirmsCompletion
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PauseResumeIntegrationTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.PauseResumeIntegrationTest:
+INSTRUMENTATION_STATUS: test=manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PauseResumeIntegrationTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Explicit interruption state; state=GUIDING; instruction=Find “Help” on this screen. Follow the marker if visible; if the app hides it, open Saathi for text help.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.PauseResumeIntegrationTest.waitFor(PauseResumeIntegrationTest.kt:48)
+	at com.saathi.ui.PauseResumeIntegrationTest.manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(PauseResumeIntegrationTest.kt:132)
+
+INSTRUMENTATION_STATUS: stream=
+Error in manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(com.saathi.ui.PauseResumeIntegrationTest):
+java.lang.AssertionError: Explicit interruption state; state=GUIDING; instruction=Find “Help” on this screen. Follow the marker if visible; if the app hides it, open Saathi for text help.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.PauseResumeIntegrationTest.waitFor(PauseResumeIntegrationTest.kt:48)
+	at com.saathi.ui.PauseResumeIntegrationTest.manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(PauseResumeIntegrationTest.kt:132)
+
+INSTRUMENTATION_STATUS: test=manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PermissionLossIntegrationTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.PermissionLossIntegrationTest:
+INSTRUMENTATION_STATUS: test=overlayAndAccessibilityRevocationStopAndNeverAutoResume
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PermissionLossIntegrationTest
+INSTRUMENTATION_STATUS: current=12
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=overlayAndAccessibilityRevocationStopAndNeverAutoResume
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.CommerceGuidanceTest:
+INSTRUMENTATION_STATUS: test=realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=13
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=realServiceFollowsProductHierarchyToReviewAndPrivateReturnWithoutBackend
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=repeatedControlsRequireTheMatchingCardAndAmbiguousProductsStayUserChoices
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=14
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=repeatedControlsRequireTheMatchingCardAndAmbiguousProductsStayUserChoices
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=startingOnAlreadyOpenQuietCommerceScreenObservesWithoutNewAppEvent
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=15
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=startingOnAlreadyOpenQuietCommerceScreenObservesWithoutNewAppEvent
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=promotionNeedsAnObservedDialogAndSafeNamedDismissal
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.CommerceGuidanceTest
+INSTRUMENTATION_STATUS: current=16
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=16
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=promotionNeedsAnObservedDialogAndSafeNamedDismissal
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 59.248
+There was 1 failure:
+1) manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(com.saathi.ui.PauseResumeIntegrationTest)
+java.lang.AssertionError: Explicit interruption state; state=GUIDING; instruction=Find “Help” on this screen. Follow the marker if visible; if the app hides it, open Saathi for text help.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.PauseResumeIntegrationTest.waitFor(PauseResumeIntegrationTest.kt:48)
+	at com.saathi.ui.PauseResumeIntegrationTest.manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(PauseResumeIntegrationTest.kt:132)
+
+FAILURES!!!
+Tests run: 16,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

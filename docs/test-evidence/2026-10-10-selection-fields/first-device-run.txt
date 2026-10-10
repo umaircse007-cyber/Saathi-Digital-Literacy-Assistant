@@ -1,0 +1,393 @@
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.SelectionFormTest:
+INSTRUMENTATION_STATUS: test=checkboxLabelsStillExposeChallengeAndPrivacyBoundaries
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.SelectionFormTest.checkboxLabelsStillExposeChallengeAndPrivacyBoundaries(SelectionFormTest.kt:54)
+
+INSTRUMENTATION_STATUS: stream=
+Error in checkboxLabelsStillExposeChallengeAndPrivacyBoundaries(com.saathi.ui.SelectionFormTest):
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.SelectionFormTest.checkboxLabelsStillExposeChallengeAndPrivacyBoundaries(SelectionFormTest.kt:54)
+
+INSTRUMENTATION_STATUS: test=checkboxLabelsStillExposeChallengeAndPrivacyBoundaries
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.SelectionFormTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.SelectionFormTest.requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(SelectionFormTest.kt:22)
+
+INSTRUMENTATION_STATUS: stream=
+Error in requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(com.saathi.ui.SelectionFormTest):
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.SelectionFormTest.requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(SelectionFormTest.kt:22)
+
+INSTRUMENTATION_STATUS: test=requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.ReactiveFormIntegrationTest:
+INSTRUMENTATION_STATUS: test=nativeFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=3
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=nativeFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=webSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=4
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Dropdown is guided without certifying its selection: I cannot identify a safe enabled form field here. Guidance will recheck when the screen changes.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.ReactiveFormIntegrationTest.waitFor(ReactiveFormIntegrationTest.kt:47)
+	at com.saathi.ui.ReactiveFormIntegrationTest.exercise(ReactiveFormIntegrationTest.kt:103)
+	at com.saathi.ui.ReactiveFormIntegrationTest.webSelectionValuesRemainLocalAndRemovalRebuildsGuidance(ReactiveFormIntegrationTest.kt:168)
+
+INSTRUMENTATION_STATUS: stream=
+Error in webSelectionValuesRemainLocalAndRemovalRebuildsGuidance(com.saathi.ui.ReactiveFormIntegrationTest):
+java.lang.AssertionError: Dropdown is guided without certifying its selection: I cannot identify a safe enabled form field here. Guidance will recheck when the screen changes.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.ReactiveFormIntegrationTest.waitFor(ReactiveFormIntegrationTest.kt:47)
+	at com.saathi.ui.ReactiveFormIntegrationTest.exercise(ReactiveFormIntegrationTest.kt:103)
+	at com.saathi.ui.ReactiveFormIntegrationTest.webSelectionValuesRemainLocalAndRemovalRebuildsGuidance(ReactiveFormIntegrationTest.kt:168)
+
+INSTRUMENTATION_STATUS: test=webSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=webFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=5
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=webFieldsReactWithoutZoomRefreshOrValueAccess
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=nativeSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.ReactiveFormIntegrationTest
+INSTRUMENTATION_STATUS: current=6
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=nativeSelectionValuesRemainLocalAndRemovalRebuildsGuidance
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.NodeMaskerPrivacyTest:
+INSTRUMENTATION_STATUS: test=mixedFormKeepsSafeFieldIndicesWithoutSelectingSecrets
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=7
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=mixedFormKeepsSafeFieldIndicesWithoutSelectingSecrets
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=privateOccupancyMustNotBeDerivedFromValue
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=8
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.NodeMaskerPrivacyTest.privateOccupancyMustNotBeDerivedFromValue(NodeMaskerPrivacyTest.kt:32)
+
+INSTRUMENTATION_STATUS: stream=
+Error in privateOccupancyMustNotBeDerivedFromValue(com.saathi.ui.NodeMaskerPrivacyTest):
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.NodeMaskerPrivacyTest.privateOccupancyMustNotBeDerivedFromValue(NodeMaskerPrivacyTest.kt:32)
+
+INSTRUMENTATION_STATUS: test=privateOccupancyMustNotBeDerivedFromValue
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=structureOnlyMarkerIsUniqueAndNeverConfirmsCompletion
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=9
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=structureOnlyMarkerIsUniqueAndNeverConfirmsCompletion
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+INSTRUMENTATION_STATUS: test=privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.NodeMaskerPrivacyTest
+INSTRUMENTATION_STATUS: current=10
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.NodeMaskerPrivacyTest.privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence(NodeMaskerPrivacyTest.kt:68)
+
+INSTRUMENTATION_STATUS: stream=
+Error in privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence(com.saathi.ui.NodeMaskerPrivacyTest):
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.NodeMaskerPrivacyTest.privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence(NodeMaskerPrivacyTest.kt:68)
+
+INSTRUMENTATION_STATUS: test=privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PauseResumeIntegrationTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stream=
+com.saathi.ui.PauseResumeIntegrationTest:
+INSTRUMENTATION_STATUS: test=manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: class=com.saathi.ui.PauseResumeIntegrationTest
+INSTRUMENTATION_STATUS: current=11
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=11
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Explicit interruption state; state=GUIDING; instruction=Find “Help” on this screen. Follow the marker if visible; if the app hides it, open Saathi for text help.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.PauseResumeIntegrationTest.waitFor(PauseResumeIntegrationTest.kt:48)
+	at com.saathi.ui.PauseResumeIntegrationTest.manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(PauseResumeIntegrationTest.kt:132)
+
+INSTRUMENTATION_STATUS: stream=
+Error in manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(com.saathi.ui.PauseResumeIntegrationTest):
+java.lang.AssertionError: Explicit interruption state; state=GUIDING; instruction=Find “Help” on this screen. Follow the marker if visible; if the app hides it, open Saathi for text help.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.PauseResumeIntegrationTest.waitFor(PauseResumeIntegrationTest.kt:48)
+	at com.saathi.ui.PauseResumeIntegrationTest.manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(PauseResumeIntegrationTest.kt:132)
+
+INSTRUMENTATION_STATUS: test=manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 53.123
+There were 6 failures:
+1) checkboxLabelsStillExposeChallengeAndPrivacyBoundaries(com.saathi.ui.SelectionFormTest)
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.SelectionFormTest.checkboxLabelsStillExposeChallengeAndPrivacyBoundaries(SelectionFormTest.kt:54)
+2) requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(com.saathi.ui.SelectionFormTest)
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.SelectionFormTest.requiredSelectionIsGuidedWithoutReadingOrRepeatingItsValue(SelectionFormTest.kt:22)
+3) webSelectionValuesRemainLocalAndRemovalRebuildsGuidance(com.saathi.ui.ReactiveFormIntegrationTest)
+java.lang.AssertionError: Dropdown is guided without certifying its selection: I cannot identify a safe enabled form field here. Guidance will recheck when the screen changes.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.ReactiveFormIntegrationTest.waitFor(ReactiveFormIntegrationTest.kt:47)
+	at com.saathi.ui.ReactiveFormIntegrationTest.exercise(ReactiveFormIntegrationTest.kt:103)
+	at com.saathi.ui.ReactiveFormIntegrationTest.webSelectionValuesRemainLocalAndRemovalRebuildsGuidance(ReactiveFormIntegrationTest.kt:168)
+4) privateOccupancyMustNotBeDerivedFromValue(com.saathi.ui.NodeMaskerPrivacyTest)
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.NodeMaskerPrivacyTest.privateOccupancyMustNotBeDerivedFromValue(NodeMaskerPrivacyTest.kt:32)
+5) privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence(com.saathi.ui.NodeMaskerPrivacyTest)
+java.lang.IllegalStateException: Cannot perform this action on a not sealed instance.
+	at android.view.accessibility.AccessibilityNodeInfo.enforceSealed(AccessibilityNodeInfo.java:4710)
+	at android.view.accessibility.AccessibilityNodeInfo.getLabeledBy(AccessibilityNodeInfo.java:4228)
+	at com.saathi.accessibility.NodeMasker.associatedLabel(NodeMasker.kt:76)
+	at com.saathi.accessibility.NodeMasker.read(NodeMasker.kt:33)
+	at com.saathi.accessibility.NodeMasker.flatten$lambda$5(NodeMasker.kt:15)
+	at com.saathi.accessibility.NodeMasker.$r8$lambda$ONQBsjx43BRMVylNI6Pi7fg8ZHU(NodeMasker.kt:0)
+	at com.saathi.accessibility.NodeMasker$$ExternalSyntheticLambda8.invoke(D8$$SyntheticClass:0)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$walk(CompleteTreeWalk.kt:11)
+	at com.saathi.accessibility.CompleteTreeWalk.visit(CompleteTreeWalk.kt:19)
+	at com.saathi.accessibility.CompleteTreeWalk.visit$default(CompleteTreeWalk.kt:5)
+	at com.saathi.accessibility.NodeMasker.flatten(NodeMasker.kt:14)
+	at com.saathi.accessibility.NodeMasker.flatten$default(NodeMasker.kt:12)
+	at com.saathi.ui.NodeMaskerPrivacyTest.privateContextDiscardsNonNumericMessageAndUnknownFieldDoesNotBecomeBlankEvidence(NodeMaskerPrivacyTest.kt:68)
+6) manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(com.saathi.ui.PauseResumeIntegrationTest)
+java.lang.AssertionError: Explicit interruption state; state=GUIDING; instruction=Find “Help” on this screen. Follow the marker if visible; if the app hides it, open Saathi for text help.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at com.saathi.ui.PauseResumeIntegrationTest.waitFor(PauseResumeIntegrationTest.kt:48)
+	at com.saathi.ui.PauseResumeIntegrationTest.manualPauseAndPrivateChallengeRoundTripsRequireFreshObservations(PauseResumeIntegrationTest.kt:132)
+
+FAILURES!!!
+Tests run: 11,  Failures: 6
+
+
+INSTRUMENTATION_CODE: -1
