@@ -17,6 +17,24 @@ class LiveGuideTest {
         assertFalse(plan.useCloud)
         assertFalse(plan.local.goalComplete)
     }
+    @Test fun `editable search exposed through a public identifier is a grounded search target`() {
+        val search = UiNode(
+            bounds = Rect(10, 20, 300, 100), text = null, description = null, hint = null,
+            resourceId = "shop:id/search-query-input", className = "android.widget.EditText", isPassword = false,
+            isEnabled = true, isClickable = true, isEditable = true
+        )
+        val plan = LiveGuide.plan("Order milk", listOf(search), "en-IN", false)
+        assertEquals(0, plan.local.target?.nodeIndex)
+        assertTrue(plan.local.speechText.contains("Use Search"))
+    }
+    @Test fun `editable identifier must name search as a distinct control token`() {
+        val research = UiNode(
+            bounds = Rect(10, 20, 300, 100), text = null, description = null, hint = null,
+            resourceId = "shop:id/research-note", className = "android.widget.EditText", isPassword = false,
+            isEnabled = true, isClickable = true, isEditable = true
+        )
+        assertNull(LiveGuide.plan("Order milk", listOf(research), "en-IN", false).local.target)
+    }
     @Test fun `exact product with bounded quantity control leads to cart review`() {
         fun commerce(text: String?, parent: Int?, clickable: Boolean = false) = UiNode(
             bounds = Rect(), text = text, description = null, hint = null, resourceId = null,

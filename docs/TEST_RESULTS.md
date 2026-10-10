@@ -1,3 +1,23 @@
+## 11 October 2026 — Samsung Zepto marker recovery
+
+- **PASS:** Root cause for the reported missing Zepto markers was an unbound
+  Accessibility service after the prior approved replacement install. The
+  device owner enabled Screen guidance manually. `startLive` now reports the
+  missing prerequisite instead of silently beginning an unobservable session.
+- **PASS:** The current debug APK was installed on Samsung `SM-M076B`. On
+  Zepto's cleared public search screen, `Order milk` produced the local `Use
+  Search…` instruction with `overlay=true`, a 49 ms fresh snapshot, zero model
+  calls and no recorded failure. The physical Android test passed twice.
+- **PASS:** Focused unit regression and debug build passed. The new matcher
+  recognizes only a public search hint/resource identifier; editable values
+  and descriptions remain unavailable to the matcher.
+- **PREVIOUS SAME-PHASE EVIDENCE:** A user-authorized reversible exact-product
+  add, quantity/cart recognition, cart review and removal completed without
+  opening address, checkout or payment controls.
+
+Evidence: `test-evidence/2026-10-11-samsung-zepto/README.md`. This is a
+single-device/current-layout result, not universal Zepto or purchase support.
+
 ## 11 October 2026 — Samsung voice lifecycle follow-up
 
 - **PASS:** Samsung `VoiceLifecycleTest` 1/1 in 8.193 seconds. The synthetic local session survived Home, returned through Saathi's launcher, ignored an obsolete Stop notification after replacement, and stopped explicitly.

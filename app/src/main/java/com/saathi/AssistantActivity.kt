@@ -129,7 +129,8 @@ class AssistantActivity : ComponentActivity() {
                             if (SaathiSession.isActive() && SaathiSession.isLive()) SaathiSession.changeLiveRequest(request, SaathiSession.sessionKey())
                             else SaathiSession.startLive(this@AssistantActivity, request, preferences.language, spoken)
                         }
-                            .onSuccess { if (it) finish() else error = "Could not start. Check screen guidance and overlay permissions." }
+                            .onSuccess { if (it) finish() else error = SaathiSession.liveReadinessMessage(this@AssistantActivity)
+                                ?: "Could not start. Please return to the app you want help with and try again." }
                             .onFailure { SaathiSession.stop(); error = "Could not start. Please try again." }
                     })
                     if (SaathiSession.isActive()) {

@@ -81,8 +81,25 @@ object SaathiSession {
         }
     }
     fun canObserve(packageName: String) = if (live) LiveGuide.allowedPackage(packageName, context?.packageName.orEmpty()) else packageName == context?.packageName
+
+    /**
+     * Live guidance depends on two user-granted surfaces.  Previously startLive() could
+     * activate a session while either surface was unavailable; the UI then closed and the
+     * session waited forever for an accessibility event, which looked like a broken marker.
+     * Keep this check side-effect free so callers can show the exact recovery action.
+     */
+    fun liveReadinessMessage(app: Context): String? = when {
+        !android.provider.Settings.canDrawOverlays(app) ->
+            "Enable Floating assistant, then return to Saathi."
+        !com.saathi.accessibility.SaathiAccessibilityService.isConnected() ->
+            "Enable Screen guidance in Accessibility settings, then return to Saathi."
+        app.getSystemService(android.app.KeyguardManager::class.java).isKeyguardLocked ->
+            "Unlock your phone before starting on-screen guidance."
+        else -> null
+    }
+
     fun startLive(app: Context, request: String, language: GuidanceLanguage, spoken: Boolean): Boolean {
-        if (!acceptsLiveRequest(request)) return false
+        if (!acceptsLiveRequest(request) || liveReadinessMessage(app) != null) return false
         start(app, request, language, spoken, com.saathi.ui.Preferences(app).speechRate, liveMode = true)
         // Starting on an already-open app may produce no new external accessibility event.
         // Observe explicitly, as Resume and request replacement already do.

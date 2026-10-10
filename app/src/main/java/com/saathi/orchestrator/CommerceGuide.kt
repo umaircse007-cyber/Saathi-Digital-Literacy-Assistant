@@ -13,6 +13,13 @@ internal object CommerceGuide {
     private val suggestedSearch = Regex("(?i)^search\\s+[\"“][\\p{L}\\p{N} &-]{1,50}[\"”]$")
     private fun searchLabel(value: String) = normalized(value) in search ||
         (suggestedSearch.matches(value.trim()) && !dangerous.containsMatchIn(value))
+    // Editable values are intentionally never read. Some apps therefore expose an empty
+    // search box only through its public resource identifier (for example
+    // `search-query-input`). Treat that identifier as an affordance name, not as content.
+    private val searchId = Regex("(?i)(?:^|[._:/-])search(?:$|[._:/-])")
+    private fun isSearchField(node: UiNode) = listOfNotNull(node.hint, node.resourceId).any {
+        searchLabel(it) || searchId.containsMatchIn(it)
+    }
     private val add = setOf("add", "add to cart", "add to basket", "जोड़ें", "कार्ट में जोड़ें", "add karein")
     private val cart = setOf("cart", "view cart", "go to cart", "view basket", "कार्ट देखें", "cart dekhein")
     private val price = Regex("(?i)(?:₹|\\$|€|£|\\bINR|\\bRs\\.?)\\s*[0-9][0-9,.]*(?:\\s*(?:/|per )\\s*[\\p{L}]+)?")
@@ -122,7 +129,11 @@ internal object CommerceGuide {
         val searches = nodes.indices.filter { i ->
             val n = nodes[i]
             n.isEnabled && !n.isSensitive && !n.isPassword &&
-                ((action(n) && labels(n).any(::searchLabel)) || (n.isEditable && n.hint?.let(::searchLabel) == true))
+                ((action(n) && labels(n).any(::searchLabel)) ||
+                    // Node masking deliberately hides editable text and descriptions. Use only
+                    // a public hint or resource identifier to recognize an empty search box.
+                    // Entered values remain excluded from guidance inputs.
+                    (n.isEditable && isSearchField(n)))
         }.distinctBy { target(nodes, it, "").bounds.let { r -> listOf(r.left,r.top,r.right,r.bottom) } }
         if (searches.size == 1) return step(copy("Use Search to look for “$requested”. Type or speak the search in the app, then review the results. I do not read entered values.",
             "Search में “$requested” खोजें। ऐप में खुद लिखें या बोलें, फिर परिणाम जाँचें। मैं भरे हुए मान नहीं पढ़ता।",

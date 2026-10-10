@@ -1,3 +1,27 @@
+## 11 October 2026 — Samsung Zepto marker recovery
+
+Read `test-evidence/2026-10-11-samsung-zepto/README.md` before changing
+cross-app commerce guidance. The user reported that markers and next steps
+were absent. On the real Samsung, the immediate cause was that Android Screen
+guidance was disabled after the earlier authorized reinstall. The owner
+manually restored it. Do not write the device-wide accessibility setting from
+tests or scripts.
+
+Production changes in this checkpoint are deliberately narrow: starting live
+guidance now surfaces the missing prerequisite instead of opening a silent
+session; Zepto-like empty search controls are recognized from safe public
+identifier metadata, not an editable value or description. Focused Android
+unit tests and debug build pass. The final real-device empty-search run has
+`GUIDING`, `overlay=true`, 49 ms snapshot time, zero model calls and no
+failures. The earlier exact Add → quantity → cart-review → removal path is
+preserved. UI/theme/layout remain untouched.
+
+Do not claim checkout/order completion, arbitrary retailer/product support, or
+universal Android compatibility. Do not repeat the cart add without a new
+user authorization. No deployment, release, provider call, commit or push was
+performed. The current usage check has 35% remaining, above the user's 10%
+handoff floor.
+
 ## 11 October 2026 — Current continuation: fresh offline regression and Samsung teardown evidence
 
 Read `HANDOFF_2026-10-11_CURRENT_CONTINUATION.md` first. The UI and production source were unchanged in this checkpoint. Fresh Android unit evidence is **168/168 PASS** and the full offline backend suite was previously **170/170 PASS**; the backend run used an explicitly permitted loopback-only test server and made no provider or internet request. An additional four-test offline deployment-preflight suite now passes. `deploy/preflight.py` verifies future host configuration without starting a server, opening a socket or exposing credentials. Debug/release packaging and lint also pass (0 errors, 60 warnings). A serialized Samsung `VoiceLifecycleTest` method passed 1/1 in its JUnit result, but Gradle reported an instrumentation-process crash during teardown after the assertion completed. No Saathi fatal exception appeared in the filtered log; classify this as a device/runner teardown blocker, not a clean Gradle pass or a product certification. Do not run concurrent device tests or clear the device-wide accessibility-service setting. Deployment, provider calls, protected portals and external hosting remain deferred.

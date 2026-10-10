@@ -28,6 +28,15 @@ This is deterministic local guidance, not genuine-model reasoning. The external 
 
 On 10 October, a user-authorized Samsung test verified one real public Zepto product-results flow: exact product identification, a single reversible Add, observed in-card quantity state, a unique Cart review target and removal of the same test item. Guidance was snapshot-local and made no model calls. The final state returned to a visible Add control. No checkout, payment, purchase, private entry or automatic tap by Saathi occurred.
 
+On 11 October, a reported missing-marker regression was traced to the
+Accessibility service having been disabled after an approved replacement
+install. Android's confirmation was performed manually by the device owner.
+Saathi now reports the missing live-guidance prerequisite before starting.
+The same Samsung also verified that the cleared Zepto search `EditText`
+produces an active Search marker for `Order milk`. Its visible editable
+description/value remains unread; recognition is limited to the field's public
+identifier or hint. See `test-evidence/2026-10-11-samsung-zepto/README.md`.
+
 This closes the earlier "no phone / no Zepto" prerequisite for that narrow flow only. It does not make Zepto support universal: product cards, saved locations, stock, screen hierarchies and app versions can change. The evidence contains filtered public labels and structural metadata only; device screenshots/XML with address details were deleted.
 
 ## Popups
