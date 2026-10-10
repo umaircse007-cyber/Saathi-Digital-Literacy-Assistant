@@ -249,4 +249,8 @@ Choose and review source/search hosting and source-authority records; configure 
 
 **PHYSICAL DEVICE / HARNESS BLOCKER:** On Samsung SM-M076B, the serialized `VoiceLifecycleTest` method passed 1/1 in JUnit, but Gradle reported `INSTRUMENTATION_FAILED: Process crashed` during teardown. Filtered logs contain no Saathi fatal exception. Do not treat this as a clean physical-device acceptance result; rerun only with a single process and package-scoped cleanup if a new device phase is justified.
 
+**PRE-DEPLOYMENT IMPLEMENTED:** `deploy/preflight.py` performs an offline check of future private config/state permissions, provider placeholders/models/caps and Caddy-domain replacement without starting services, opening sockets or exposing secrets. Four focused tests pass. It does not validate a chosen host, TLS, remote connectivity, shared multi-instance state or release signing.
+
+**FINAL REPOSITORY CHECKPOINT:** Full synthetic backend evidence is now **174/174 PASS**; Android unit/build/lint evidence and existing UI preservation remain unchanged. Samsung launch smoke passed after restoring the debug APK. The complete next-phase boundary is `HANDOFF_2026-10-11_READY_FOR_HOSTING.md`.
+
 **OPEN:** Historical WebView causality, arbitrary browser provenance and plan binding, structural-only form semantics, genuine provider quality/latency, human voice/OEM/TalkBack/long-session acceptance, protected cybercrime workflows, shared hosted persistence and deployment configuration.

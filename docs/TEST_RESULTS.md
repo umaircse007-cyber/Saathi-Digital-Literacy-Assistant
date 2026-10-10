@@ -591,5 +591,8 @@ A direct retry of the official cybercrime portal again timed out. Live complaint
 - Android `:app:testDebugUnitTest --rerun-tasks`: **168 passed, 0 failed, 0 errors, 0 skipped**.
 - Backend `python3 -m unittest discover -s backend/tests -p 'test_*.py'`: **170 passed in 8.063s**. Local loopback permission was required; no external provider or network call was made.
 - `:app:assembleDebug :app:assembleRelease :app:lint`: **BUILD SUCCESSFUL**; lint reports 0 errors and 60 warnings.
+- Offline deployment preflight: **4 focused tests passed**. `deploy/preflight.py` checks future private configuration/state permissions and placeholder-free settings without starting a server, using a provider, or printing secrets.
+- Samsung post-restore launch smoke: `LaunchActivity` opened successfully in 272 ms and the Saathi process was present. This is a basic install/launch check, not a continuous-background or human-voice acceptance result.
+- Final tracked-source Gemini/Groq key-pattern scan: no matches. Ignored local credential files were not read.
 - Samsung `VoiceLifecycleTest`: the test method is recorded **PASS 1/1** in the generated XML, while the Android instrumentation process reports a teardown crash and Gradle exits non-zero. No Saathi fatal exception was present in the filtered log. Keep this as a runner/device teardown blocker, not a clean physical-device suite pass.
 - No UI, layout, navigation, brand, color or production guidance source changed in this checkpoint. No deployment, release signing, model call, account, portal or transaction was performed.

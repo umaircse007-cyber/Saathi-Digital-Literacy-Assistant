@@ -2,7 +2,7 @@
 
 ## Scope and stop rule
 
-This continuation kept the product UI, navigation, colors, logo, glass controls and content-sized buttons unchanged. Deployment, hosting, release signing, publishing, commit and push remain deferred. At the latest usage check, 31% remained in the active window; the user’s required stop point is **below 10%**. Before every further phase, check usage again. If either available window is below 10%, update this handoff with the measured value and stop immediately without using reset credits.
+This continuation kept the product UI, navigation, colors, logo, glass controls and content-sized buttons unchanged. Deployment, hosting, release signing, publishing, commit and push remain deferred. At the latest usage check, 54% remained in the active window; the user’s required stop point is **below 10%**. Before every further phase, check usage again. If either available window is below 10%, update this handoff with the measured value and stop immediately without using reset credits.
 
 ## Fresh evidence in this continuation
 
@@ -11,10 +11,11 @@ This continuation kept the product UI, navigation, colors, logo, glass controls 
 - Android unit suite: **168 tests passed, 0 failures, 0 errors, 0 skipped** (`:app:testDebugUnitTest --rerun-tasks`).
 - Backend suite: **170 tests passed in 8.063 seconds, 0 failures, 0 errors**. The first sandbox attempt could not bind localhost; the successful run used the permitted local loopback test server. It made no Gemini, Groq or internet request.
 - Debug and release packaging plus lint completed successfully on the current tree; lint reported 0 errors and 60 warnings. The Android test compilation performed by the unit run also completed successfully. No production source was changed in this continuation.
+- A new offline `deploy/preflight.py` validates a future host's private environment-file and durable-state permissions, placeholder-free provider configuration, call-cap bounds and completed Caddy domain replacement. It starts no service, opens no socket, contacts no provider and does not echo secret values. Its four focused tests pass.
 
 ### Samsung SM-M076B
 
-One serialized `VoiceLifecycleTest` was attempted on the connected Samsung. The generated JUnit result records the test method as **passed (1/1, 8.848 seconds)**, including the waiting foreground service, Home transition, replacement session and stale notification Stop guard. Gradle nevertheless returned a non-zero result because Samsung’s instrumentation process reported `Process crashed` during teardown after the test had completed. The saved log contains no Saathi `FATAL EXCEPTION`; this is a runner/device teardown failure, not proof that the product assertion failed. It must not be counted as a clean end-to-end Gradle pass. The prior isolated Samsung lifecycle PASS and the prior bounded PhysicalSpeech PASS remain the valid physical evidence.
+One serialized `VoiceLifecycleTest` was attempted on the connected Samsung. The generated JUnit result records the test method as **passed (1/1, 8.848 seconds)**, including the waiting foreground service, Home transition, replacement session and stale notification Stop guard. Gradle nevertheless returned a non-zero result because Samsung’s instrumentation process reported `Process crashed` during teardown after the test had completed. The saved log contains no Saathi `FATAL EXCEPTION`; this is a runner/device teardown failure, not proof that the product assertion failed. It must not be counted as a clean end-to-end Gradle pass. The prior isolated Samsung lifecycle PASS and the prior bounded PhysicalSpeech PASS remain the valid physical evidence. The current debug APK was restored afterward and a direct `LaunchActivity` smoke test passed (272 ms, process present).
 
 No browser account, Zepto transaction, payment, cybercrime form, CAPTCHA, legal declaration, private value, real complaint or model provider was touched.
 
@@ -30,7 +31,7 @@ The following remain intentionally open and must not be represented as complete:
 4. Genuine Gemini/Groq quality, paired reasoning, provider latency under real accounts and account-side usage are unverified in this continuation. All prior live-call allowances are exhausted; no new calls were made.
 5. Physical voice intelligibility, recognition accuracy, OEM background survival, TalkBack usability and long-session resource behavior require manual acceptance. The Samsung runner teardown issue should be retested only with a clean, serialized harness if a new device phase is needed.
 6. The authenticated cybercrime portal and other protected workflows require legitimate access and cannot be certified with test data.
-7. A hosted HTTPS URL, production identity/account authority, TLS certificate, shared durable store and release configuration have not been selected. This is the deployment boundary, not a repository test failure.
+7. A hosted HTTPS URL, production identity/account authority, TLS certificate, shared durable store and release configuration have not been selected. The new offline preflight removes only configuration-shape uncertainty; it is not a host or TLS acceptance. This is the deployment boundary, not a repository test failure.
 
 ## Safe next order
 
@@ -52,3 +53,5 @@ The following remain intentionally open and must not be represented as complete:
 ## Handoff verdict
 
 Repository-level behavior is substantially implemented and freshly regression-tested within the documented scopes. The build is **awaiting external acceptance and deployment**. It is not certified as universally compatible, provider-accurate, crash-free, or production-ready until the explicitly listed browser, provider, physical-device, protected-portal and hosting gates are resolved.
+
+For the single authoritative final pre-hosting checklist, read `HANDOFF_2026-10-11_READY_FOR_HOSTING.md`.
